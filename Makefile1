@@ -1,0 +1,14 @@
+$(info $(SHELL))
+$(info $(SHELL) $(origin SHELL))
+$(info $(SUDO_USER))
+$(info $(SUDO_USER) $(origin SUDO_USER))
+
+
+#overriding default Environment Variable
+override SUDO_USER=root
+$(info $(SUDO_USER))
+$(info $(SUDO_USER) $(origin SUDO_USER))
+
+ifdef CC
+$(info "CC already defined to" $(CC))
+endif

@@ -1,2 +1,2 @@
-# gnumake
-GNU make - how to write an efficient Makefile
+# GNUMAKE
+Programming or Designing a Makefile

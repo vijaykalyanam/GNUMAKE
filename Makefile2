@@ -1,0 +1,27 @@
+ifndef BUILD_DEBUG
+BUILD_DEBUG=no
+$(info "BUILD_DEBUG NOT DEFINED" $(BUILD_DEBUG))
+endif
+ifdef BUILD_DEBUG
+BUILD_DEBUG=yes
+$(info "BUILD_DEBUG DEFINED" $(BUILD_DEBUG))
+endif
+
+BUILD_DEBUG ?= MAKE_OPERATOR
+$(info "Makefile/CommandLine " $(BUILD_DEBUG))
+BUILD_DEBUG:=UNSET2
+$(info "Makefile/CommandLine " $(BUILD_DEBUG))
+
+override BUILD_DEBUG=OVERRIDED
+$(info "override BUILD_DEBUG" $(BUILD_DEBUG))
+
+export BUILD_DEBUG=EXPORT
+$(info "INFO Makefile" $(BUILD_DEBUG))
+$(info "INFO SHELL" $(shell printenv | grep BUILD_DEBUG))
+
+#Print inside ECHO
+all: ; @echo ECHO is $$BUILD_DEBUG
+
+
+#target:	prerequisites
+#		recipie
